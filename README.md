@@ -4,7 +4,7 @@ simple shell script to make application-specific mouse button actions possible
 # Explanation:
 I have a mouse with a DPI/resolution button that I don't use much.
 This script is intended to run in the background and determine if a particular mouse button has been pressed.
-Then it will attempt to run an xdotool key combo or other command based on the window name/class.
+Then it will attempt to run an xdotool key combo or other command based on the window name/class
 
 # Variables (things you will need to change)
 **Window names and associated binds** - I used discord, splitgate, and freetube as examples
@@ -48,5 +48,8 @@ watch -n 0.1 xinput --query-state $MOUSE_ID
 
 # Setup
 You will need to make a startup program to get this .sh file running in the background once you log in. This depends on your distro I guess, but is easy on Linux Mint (that's all I know)
+
+# Inspiration/Acknowledgements
+https://unix.stackexchange.com/questions/106736/detect-if-mouse-button-is-pressed-then-invoke-a-script-or-command	
 #
 I think that's all... make an issue if you need help!
