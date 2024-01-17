@@ -25,7 +25,7 @@ sleep 3 ; xprop -id $(xdotool getactivewindow) | awk -F '=' '/WM_CLASS/{print $2
 #
 **MOUSE_ID** - run *xinput --list* and find the name of your mouse
 
-$ ``xinput --list``
+$ ``xinput --list`` (example output)
 ```
 ⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
 ⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
