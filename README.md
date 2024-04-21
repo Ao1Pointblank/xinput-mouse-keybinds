@@ -7,17 +7,27 @@ This script is intended to run in the background and determine if a particular m
 Then it will attempt to run an xdotool key combo or other command based on the window name/class
 
 # Variables (things you will need to change)
-**Window names and associated binds** - I used discord, splitgate, and freetube as examples
+**Window names and associated binds** - I used discord, splitgate, and some other steam games as example applications
 ```bash
-    if echo "$active_window" | grep -q "discord"; then
-    	xdotool key "alt+shift+Up" #navigate to top unread channel in discord
-    elif echo "$active_window" | grep -q "PortalWars-Linux-Shipping"; then
-		xdotool key "H" #put down a spray in splitgate
-    elif echo "$active_window" | grep -q "FreeTube"; then
-		xdotool key "ctrl+R" #reload freetube window
-    fi
+    case "$active_window" in
+        *discord*)
+            COMMAND="xdotool key 'alt+shift+Up'" ;;
+        *PortalWars-Linux-Shipping*)
+            COMMAND="xdotool key 'f+h'" ;;
+        *steam_app_782330*) 		#doom eternal
+            COMMAND="xdotool key 'g+f'; xdotool key 'g'" ;;
+        *steam_app_553850*) 		#helldivers
+            COMMAND="xdotool key 'ISO_Group_Shift'" ;;
+        *steam_app_1240440*) 		#halo infinite
+            COMMAND="xdotool key 'g'" ;;
+        *)
+            echo "No command specified" ;;
+    esac
 ```
-you can use the following command in terminal and then quickly click on the target window to identify it's name/class:  
+It should be pretty easy for you to add/replace these case examples following this syntax.
+
+
+you can use the following command in terminal and then quickly click on the target window to identify it's name/class:  (or if you are on Cinnamon DE, Melange is another easy way)
 ```bash
 sleep 3 ; xprop -id $(xdotool getactivewindow) | awk -F '=' '/WM_CLASS/{print $2}' | tr -d '",' | sed -e 's/^[[:space:]]*//'
 ```
