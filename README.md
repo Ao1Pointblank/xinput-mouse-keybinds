@@ -59,6 +59,12 @@ watch -n 0.1 xinput --query-state $MOUSE_ID
 # Setup
 You will need to make a startup program to get this .sh file running in the background once you log in. This depends on your distro I guess, but is easy on Linux Mint (that's all I know)
 
+# Troubleshooting    
+I have noticed that some USB ports the mouse is plugged into do not detect all the buttons properly. I don't think it is even dependent on USB version/number, since the ones on my motherboard are very clearly marked.    
+Anyway, you may need to try different ports to get some of the higher-numbered buttons to show with ``xinput --query-state $MOUSE_ID``.    
+Example of different buttons being detected in different USB ports: (I have the script set to use ``button[10]``)    
+![Screenshot from 2024-04-22 20-44-45](https://github.com/Ao1Pointblank/xinput-mouse-keybinds/assets/88149675/f0b6b91e-e7a8-4a88-b5d6-fe1a39e29bb0)
+
 # Inspiration/Acknowledgements
 https://unix.stackexchange.com/questions/106736/detect-if-mouse-button-is-pressed-then-invoke-a-script-or-command	
 #
