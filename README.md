@@ -1,3 +1,7 @@
+# ⚠️ Heads Up (stupid project alert):    
+this project turns out to be very stupid. one restless night, I had a Eureka moment and realized there is a much more obvious and simpler way to get a mouse to run scripts. there is also a better way to write the script file itself, that detects window classes. The better method simply uses ``xbindkeys``, but does still rely on [Piper](https://github.com/libratbag/piper) to set the mouse DPI button to a useable key (Button 10, aka b:10+Release in xbindkeys terms, for me)
+The simpler script will be linked in an Issue report on this Repo, or I will make a new Repo entirely and delete this one. But this code is kinda embarassing in a funny way so I may leave it up. 
+
 # xinput-mouse-keybinds
 simple shell script to make application-specific mouse button actions possible
 
